@@ -1,6 +1,5 @@
+import pymysql
+
 DEBUG = True
 
-MYSQL_HOST = 'localhost'
-MYSQL_USER = 'root'
-MYSQL_PASSWORD = 'admin'
-MYSQL_DB = 'ecommerce'
+MYSQL_CONN = pymysql.connect(host='localhost', port=3306, user='root', password='', database='ecommerce')
