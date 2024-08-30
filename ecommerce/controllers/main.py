@@ -1,9 +1,8 @@
+from flask import render_template
 from ecommerce import app
 
+@app.route("/home")
+@app.route("/index")
 @app.route("/")
 def index():
-    return "Hello world!"
-
-@app.route("/admin/", methods=['GET', 'POST'])
-def test():
-    return "oi"
+    return render_template('index.html')
