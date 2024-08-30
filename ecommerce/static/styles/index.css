@@ -1,17 +1,103 @@
 *{
     padding: 0;
     margin: 0;
+    font-size: 27px;
+}
+
+body{
+    height: 100vh;
+    background-color: gray;
+}
+
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
 }
 
 header{
     display: flex;
-    
+    width: 100%;
+    background-color: lightgray;
+    padding-bottom: 2em;
 }
 
-header div{
+#dados{
+    display: flex;
+}
+#produtos{
+    display: flex;
+    background-color: white;
+}
+
+ul li{
+    display: inline;
+}
+
+.h_display{
     display: inline;
 }
 
 main{
+    padding: 2em;
     display: grid;
+    grid-template-rows: 12em 12em 12em;
+    grid-template-areas:
+    "topo topo topo topo topo"
+    "e-superior e-c-superior central d-c-superior d-superior"
+    "e-inferior e-c-inferior central d-c-inferior d-inferior";
+    gap: 4em;
+    width: 40em;
+}
+
+.topo{
+    grid-area: topo;
+    background-color: white;
+}
+
+.e-superior{
+    grid-area: e-superior;
+    background-color: white;
+}
+
+.e-c-superior{
+    grid-area: e-c-superior;
+    background-color: white;
+}
+
+.central{
+    grid-area: central;
+    background-color: white;
+}
+
+.d-c-superior{
+    grid-area: d-c-superior;
+    background-color: white;
+}
+
+.d-superior{
+    grid-area: d-superior;
+    background-color: white;
+}
+
+.e-inferior{
+    grid-area: e-inferior;
+    background-color: white;
+}
+
+.e-c-inferior{
+    grid-area: e-c-inferior;
+    background-color: white;
+}
+
+.d-inferior{
+    grid-area: d-inferior;
+    background-color: white;
+}
+
+.d-c-inferior{
+    grid-area: d-c-inferior;
+    background-color: white;
 }
