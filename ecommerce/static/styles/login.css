@@ -1,0 +1,6 @@
+section{
+    grid-area: f;
+    background-color: #ECECEC;
+    display: flex;
+    justify-content: center;
+}

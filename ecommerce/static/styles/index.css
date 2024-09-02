@@ -18,15 +18,15 @@ a{
 }
 
 header{
-    display: flex;
-    width: 100%;
     background-color: lightgray;
     padding-bottom: 2em;
+
 }
 
 #dados{
-    display: flex;
+    display: inline-block;
 }
+
 #produtos{
     display: flex;
     background-color: white;
@@ -43,13 +43,13 @@ ul li{
 main{
     padding: 2em;
     display: grid;
-    grid-template-rows: 12em 12em 12em;
+    grid-template-rows: 15em 15em 15em;
     grid-template-areas:
     "topo topo topo topo topo"
     "e-superior e-c-superior central d-c-superior d-superior"
     "e-inferior e-c-inferior central d-c-inferior d-inferior";
-    gap: 4em;
-    width: 40em;
+    gap: 2em;
+    width: 30em;
 }
 
 .topo{
@@ -100,4 +100,12 @@ main{
 .d-c-inferior{
     grid-area: d-c-inferior;
     background-color: white;
+}
+
+footer{
+    background-color: lightgray;
+}
+
+.tam{
+    width: 10em;
 }
