@@ -1,26 +1,41 @@
 header{
-    background-color: lightgray;
-    padding: 1em;
+    background-color: var(--bgColor);
 }
 
 header nav > ol{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1em;
+    background-color: var(--headerColor);
+    padding: 1em;
+    margin: 0;
+    border-bottom: 1px solid white;
 }
 
 header nav > ol > li{
     display: flex;
     flex-direction: row;
     gap: 1em;
+    color: white;
+}
+
+header nav > ol > li > img{
+    width: 8em;
+}
+
+.ancoras{
+    text-decoration: none;
 }
 
 nav > ul{
     display: flex;
     justify-content: space-evenly;
-    background-color: rgb(160, 160, 160);
+    background-color:var(--navColor);
     padding: .5em;
+}
+
+nav > ul > li a{
+    color: white;
 }
 
 main{

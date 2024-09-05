@@ -1,5 +1,8 @@
 :root {
-    --bgColor: gray;
+    --bgColor: white;
+    --navColor: #0D405A;
+    --Color02: #427C93;
+    --headerColor: #05A3F2;
     --fontSmall: 16px;
     --fontMedium: 20px;
     --fontLarge: 30px;
@@ -11,6 +14,7 @@
     list-style-type: none;
     box-sizing: border-box;
     text-decoration: none;
+    /* alteração do text-decoration não ta funcionando no index, criei um id especificio pra tirar dos a */
     font-family: Arial, Helvetica, sans-serif;
 }
 
