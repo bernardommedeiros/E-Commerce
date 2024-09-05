@@ -1,111 +1,87 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-size: 27px;
-}
-
-body{
-    height: 100vh;
-    background-color: gray;
-}
-
-a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-}
-
 header{
     background-color: lightgray;
-    padding-bottom: 2em;
-
+    padding: 1em;
 }
 
-#dados{
-    display: inline-block;
-}
-
-#produtos{
+header nav > ol{
     display: flex;
-    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
 }
 
-ul li{
-    display: inline;
+header nav > ol > li{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
 }
 
-.h_display{
-    display: inline;
+nav > ul{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(160, 160, 160);
+    padding: .5em;
 }
 
 main{
     padding: 2em;
+    width: 100%;
+}
+
+main div[id="grid"]{
     display: grid;
-    grid-template-rows: 15em 15em 15em;
+    grid-template-rows: 20em 15em 15em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
     "topo topo topo topo topo"
     "e-superior e-c-superior central d-c-superior d-superior"
     "e-inferior e-c-inferior central d-c-inferior d-inferior";
     gap: 2em;
-    width: 30em;
 }
 
-.topo{
-    grid-area: topo;
+.topo{grid-area: topo;}
+.e-superior{grid-area: e-superior;}
+.e-c-superior{grid-area: e-c-superior;}
+.central{grid-area: central;}
+.d-c-superior{grid-area: d-c-superior;}
+.d-superior{grid-area: d-superior;}
+.e-inferior{grid-area: e-inferior;}
+.e-c-inferior{grid-area: e-c-inferior;}
+.d-inferior{grid-area: d-inferior;}
+.d-c-inferior{grid-area: d-c-inferior;}
+
+main div[id="grid"] .grid-component{
     background-color: white;
+    transition: .5s;
 }
 
-.e-superior{
-    grid-area: e-superior;
-    background-color: white;
+main div[id="grid"] .grid-component:hover{
+    background-color: rgb(224, 224, 224);
+    cursor: pointer;
 }
 
-.e-c-superior{
-    grid-area: e-c-superior;
-    background-color: white;
+main div[id="grid"] .grid-component-down{
+    max-width: 30em;
 }
 
-.central{
-    grid-area: central;
-    background-color: white;
+main div[id="grid"] .grid-img{
+    max-width: 30em;
+    max-height: 32em;
+    width: auto;
+    height: auto;
 }
 
-.d-c-superior{
-    grid-area: d-c-superior;
-    background-color: white;
-}
-
-.d-superior{
-    grid-area: d-superior;
-    background-color: white;
-}
-
-.e-inferior{
-    grid-area: e-inferior;
-    background-color: white;
-}
-
-.e-c-inferior{
-    grid-area: e-c-inferior;
-    background-color: white;
-}
-
-.d-inferior{
-    grid-area: d-inferior;
-    background-color: white;
-}
-
-.d-c-inferior{
-    grid-area: d-c-inferior;
-    background-color: white;
+.carousel-component{
+    height: 20em;
 }
 
 footer{
     background-color: lightgray;
+    padding: 1em;
 }
 
-.tam{
-    width: 10em;
+footer ol {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
 }
