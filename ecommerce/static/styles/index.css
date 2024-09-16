@@ -120,8 +120,9 @@ main div[id="grid"] .grid-img-small:hover{
 }
 
 footer{
-    background-color: lightgray;
+    background-color: var(--headerColor);
     padding: 1em;
+    border-top: 1px solid gray;
 }
 
 footer ol {
