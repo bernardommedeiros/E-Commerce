@@ -1,0 +1,55 @@
+body > div{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+body div main{
+    width: 80vw;
+    padding: 1em;
+}
+
+body div > div{
+    width: 20vw;
+    padding: 1em;
+}
+
+
+body div div .form-filtro{
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+    gap: .5em;
+}
+
+body div main > div{
+    display: grid;
+    grid-template-areas: 
+    "tenis camisa roupa";
+}
+
+.tenis{grid-area: tenis;}
+.camisa{grid-area: camisa;}
+.roupa{grid-area: roupa;}
+
+body div main div div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+body div main div div .grid-img-feminino{
+    max-width: 22.5em;
+    max-height: 20em;
+    width: auto;
+    height: auto;
+}
+
+body div main div .grid-area-feminino{
+    border: 1px solid gray;
+    padding: .5em;
+}
+
+body div main > div{
+    margin-bottom: 1em;
+}

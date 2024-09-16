@@ -1,61 +1,3 @@
-header{
-    background-color: var(--bgColor);
-}
-
-header nav > ol{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--headerColor);
-    padding: 1em;
-    margin: 0;
-    border-bottom: 1px solid white;
-}
-
-header nav > ol > li{
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    color: white;
-}
-
-nav > ul > li a{
-    text-decoration: none;
-    position: relative
-}
-
-/* Underline effect */
-nav > ul > li a::after{
-    content: '';
-    position: absolute;
-    height: 2px;
-    left: 50%;
-    bottom: 0;
-    width: 0;
-    background: white;
-    transition: all .2s;
-}
-
-nav > ul > li a:hover::after{
-    width: 100%;
-    left: 0;
-}
-
-header nav > ol > li > img{
-    width: 8em;
-}
-
-nav > ul{
-    display: flex;
-    justify-content: space-evenly;
-    background-color:var(--navColor);
-    padding: .5em;
-}
-
-nav > ul > li a{
-    color: white;
-}
-
 main{
     padding: 2em;
     width: 100%;
@@ -120,8 +62,9 @@ main div[id="grid"] .grid-img-small:hover{
 }
 
 footer{
-    background-color: lightgray;
+    background-color: var(--headerColor);
     padding: 1em;
+    border-top: 1px solid gray;
 }
 
 footer ol {
