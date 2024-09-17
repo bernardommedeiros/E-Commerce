@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block tittle %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/styles/global.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <ol>
+                <li><a href="index"><img id="logo" src="../static/imgs/logo/logo.png" alt="caixa de entrada" style="width: 8em; height: 8em;"></a></li>
+                <li id="searchbar"> <input id="input" type="text" name="" placeholder="Buscar produtos"> <img src="../static/imgs/icons/search_6033394.png" alt="lupa" style="width: 2em; height: 2em;"></li>
+                <li>
+                    <p><img src="../static/imgs/icons/carrinho.svg" alt="carrinho"></p>
+                    <p><img src="../static/imgs/icons/user.svg" alt="usuario"></p>
+                </li>
+            </ol>
+        </nav>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="">Masculino</a></li>
+            <li><a href="feminino">Feminino</a></li>
+            <li><a href="">Infantil</a></li>
+            <li><a href="">Outlet</a></li>
+        </ul>
+    </nav>
+    
+    {% block content%}{% endblock %}
+
+    <footer>
+        <ol>
+            <li><a href="">Contato</a></li>
+            <li><a href="">Politica de reembolso e devolução</a></li>
+            <li><a href="">Redes sociais</a></li>
+        </ol>
+    </footer>
+</body>
+</html>

@@ -55,3 +55,16 @@ nav > ul{
 nav > ul > li a{
     color: white;
 }
+
+header nav ol li.searchbar{
+    display: flex;
+    align-items: center;
+}
+
+#input{
+    padding: 8px;
+    border: none;
+    width: 15em;
+    outline: none;
+    border-radius: 10px;
+}

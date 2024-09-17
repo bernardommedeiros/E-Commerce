@@ -9,7 +9,9 @@ body div main{
     padding: 1em;
 }
 
-body div > div{
+body div > div#leftpart{
+    display: flex;
+    flex-direction: column;
     width: 20vw;
     padding: 1em;
 }
@@ -23,33 +25,15 @@ body div div .form-filtro{
 }
 
 body div main > div{
-    display: grid;
-    grid-template-areas: 
-    "tenis camisa roupa";
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
 }
 
-.tenis{grid-area: tenis;}
-.camisa{grid-area: camisa;}
-.roupa{grid-area: roupa;}
+.card{text-align: center;}
 
-body div main div div{
+body div main{
     display: flex;
     flex-direction: column;
-    text-align: center;
-}
-
-body div main div div .grid-img-feminino{
-    max-width: 22.5em;
-    max-height: 20em;
-    width: auto;
-    height: auto;
-}
-
-body div main div .grid-area-feminino{
-    border: 1px solid gray;
-    padding: .5em;
-}
-
-body div main > div{
-    margin-bottom: 1em;
+    gap: 2em;
 }
