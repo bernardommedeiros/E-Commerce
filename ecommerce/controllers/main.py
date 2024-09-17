@@ -10,3 +10,7 @@ def index():
 @app.route("/feminino")
 def feminino():
     return render_template('feminino.html')
+
+@app.route("/masculino")
+def masculino():
+    return render_template('masculino.html')

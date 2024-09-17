@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
 header{
     background-color: var(--bgColor);
 }
 
 header nav > ol{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--headerColor);
     padding: 1em;
@@ -19,13 +21,58 @@ header nav > ol > li{
     color: white;
 }
 
-nav > ul > li a{
+header nav > ol > li#logomarca{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+header nav > ol > li#logomarca a.name{
+    color: black;
+    font-size: 40px;
+    font-family: "Abril Fatface", serif;
     text-decoration: none;
-    position: relative
+}
+
+header nav > ol > li > a > img{
+    width: 10em;
+    height: 10em;
+}
+
+
+header nav ol li#searchbar{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 50em;
+    padding: .5em;
+    border-radius: 10px;
+}
+
+header nav ol li#searchbar input{
+    padding: 8px;
+    border: none;
+    width: 15em;
+    outline: none;
+    border-radius: 10px;
+}
+
+header nav ol li#searchbar label img{
+    width: 2em; 
+    height: 2em;
+    cursor: pointer;
+}
+
+
+
+nav > div[class="dropdown"]{
+    text-decoration: none;
+    color: white;
 }
 
 /* Underline effect */
-nav > ul > li a::after{
+nav > div[class="dropdown"]::after{
     content: '';
     position: absolute;
     height: 2px;
@@ -36,35 +83,28 @@ nav > ul > li a::after{
     transition: all .2s;
 }
 
-nav > ul > li a:hover::after{
+nav > div[class="dropdown"]:hover::after{
     width: 100%;
     left: 0;
 }
 
-header nav > ol > li > img{
-    width: 8em;
-}
 
-nav > ul{
+nav.productsTypes{
     display: flex;
     justify-content: space-evenly;
     background-color:var(--navColor);
     padding: .5em;
 }
 
-nav > ul > li a{
-    color: white;
-}
-
-header nav ol li.searchbar{
-    display: flex;
-    align-items: center;
-}
-
-#input{
-    padding: 8px;
+nav div button.dropdown-toggle{
+    background-color: transparent;
     border: none;
-    width: 15em;
-    outline: none;
-    border-radius: 10px;
+}
+
+nav div button.dropdown-toggle:hover{
+    background-color: transparent;
+}
+
+nav div button.dropdown-toggle:after{
+    content: none;
 }
