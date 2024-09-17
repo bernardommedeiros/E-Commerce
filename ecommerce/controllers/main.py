@@ -7,10 +7,18 @@ from ecommerce import app
 def index():
     return render_template('index.html')
 
-@app.route("/feminino")
+@app.route("/feminino_vestuario")
 def feminino():
     return render_template('feminino.html')
 
-@app.route("/masculino")
+@app.route("/feminino_tenis")
+def feminino_tenis():
+    return render_template('tenisFeminino.html')
+
+@app.route("/masculino_vestuario")
 def masculino():
     return render_template('masculino.html')
+
+@app.route("/masculino_tenis")
+def masculino_tenis():
+    return render_template('tenisMasculino.html')
