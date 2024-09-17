@@ -3,24 +3,6 @@ main{
     width: 100%;
 }
 
-.pesquisa{
-    display: flex;
-    align-items: center;
-    border: 1px solid black;
-    background-color: white;
-    width: 300px;
-    margin: 20px;
-    border-radius: 20px;
-    color: black;
-}
-
-#input{
-    padding: 8px;
-    border: none;
-    width: 100px;
-    outline: none;
-}
-
 main div[id="grid"]{
     display: grid;
     grid-template-rows: 20em 15em 15em;
@@ -77,6 +59,7 @@ main div[id="grid"] .grid-img-small:hover{
 
 .carousel-component{
     height: 20em;
+    background-color: transparent;
 }
 
 footer{
@@ -90,3 +73,4 @@ footer ol {
     flex-direction: column;
     gap: .5em;
 }
+

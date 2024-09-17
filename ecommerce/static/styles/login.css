@@ -3,4 +3,6 @@ section{
     background-color: #ECECEC;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding-top: 10em;
 }
