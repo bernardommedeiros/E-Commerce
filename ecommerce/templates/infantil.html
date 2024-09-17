@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roupas Femininas</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles/global.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/feminino.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ol>
+                <li><img id="logo" src="../static/imgs/logo/logo.png" alt="caixa de entrada"></li>
+                <li class="pesquisa"> <input id="input" type="text" name="" placeholder="Buscar produtos"></li>
+                <li>
+                    <p><img src="../static/imgs/icons/carrinho.svg" alt="carrinho"></p>
+                    <p><img src="../static/imgs/icons/user.svg" alt="usuario"></p>
+                </li>
+            </ol>
+        </nav>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="masculino.html">Masculino</a></li>
+            <li><a href="feminino.html">Feminino</a></li>
+            <li><a href="infantil.html">Infantil</a></li>
+            <li><a href="">Outlet</a></li>
+        </ul>
+    </nav>
+    <div>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                  Marca
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                  <form action="get" id="form-marcas" class="form-filtro">
+                    <input type="text" name="input-marca" id="input-marca" placeholder="Buscar">
+                    <label><input type="checkbox" name="check-dior" id="check-dior"> Dior</label>
+                    <label><input type="checkbox" name="check-chanel" id="check-chanel"> Chanel</label>
+                    <label><input type="checkbox" name="check-Gucci" id="check-Gucci"> Gucci</label>
+                    <label><input type="checkbox" name="check-louisvuitton" id="check-louisvuitton"> Louis Vuitton</label>
+                    <label><input type="checkbox" name="check-adidas" id="check-adidas"> Adidas</label>
+                    <label><input type="checkbox" name="check-nike" id="check-nike"> Nike</label>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                  Tamanho
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                    <form action="get" id="form-tamanhos" class="form-filtro">
+                        <input type="text" name="input-tamanho" id="input-tamanho" placeholder="Buscar">
+                        <label><input type="checkbox" name="check-30" id="check-30"> 30</label>
+                        <label><input type="checkbox" name="check-32" id="check-32"> 32</label>
+                        <label><input type="checkbox" name="check-34" id="check-34"> 34</label>
+                        <label><input type="checkbox" name="check-36" id="check-36"> 36</label>
+                        <label><input type="checkbox" name="check-38" id="check-38"> 38</label>
+                        <label><input type="checkbox" name="check-40" id="check-40"> 40</label>
+                      </form>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                  Outros
+                </button>
+              </h2>
+              <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                <div class="accordion-body">
+                  <form action="get" id="form-outros" class="form-filtro">
+                    <label><input type="checkbox" name="check-promo" id="check-promo"> Itens em Promoção</label>
+                    <label><input type="range" name="range-preco" id="range-preco"> Faixa de preço</label>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        <main>
+            <h2>Roupas Femininas</h2>
+            <div>
+                <div class="tenis grid-area-feminino">
+                    <img src="../static/imgs/homepage/calçados.webp" alt="" class=" grid-img-feminino">
+                    <p>Tênis de corrida <br> <strong>R$50,00</strong> no pix <br> ou 4x de R$75,00</p>
+                </div>
+                <div class="camisa grid-area-feminino">
+                    <img src="../static/imgs/homepage/mulher.jpg" alt="" class=" grid-img-feminino">
+                    <p>Camisa básica <br> <strong>R$50,00</strong> no pix <br> ou 4x de R$75,00</p>
+                </div>
+                <div class="roupa grid-area-feminino">
+                    <img src="../static/imgs/homepage/acessoriosFeminino.jpg" alt="" class=" grid-img-feminino">
+                    <p>Camisa básica <br> <strong>R$50,00</strong> no pix <br> ou 4x de R$75,00</p>
+                </div>
+            </div>
+            
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item"><a class="page-link" href="#">Voltar</a></li>
+                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Próxima página</a></li>
+                </ul>
+              </nav>
+        </main>
+    </div>
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
