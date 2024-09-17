@@ -108,3 +108,16 @@ nav div button.dropdown-toggle:hover{
 nav div button.dropdown-toggle:after{
     content: none;
 }
+
+
+nav ol li div.carrinho{
+    display: flex;
+    flex-direction: column;
+}
+
+nav ol li div.login form div.recuperarConta{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    margin-top: .5em;
+}

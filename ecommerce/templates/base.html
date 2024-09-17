@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/styles/global.css">
     <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
     {% block css %}{% endblock %}
 </head>
 <body>
@@ -22,7 +23,7 @@
                     <input id="input" type="text" name="" placeholder="Buscar produtos">
                 </li>
                 <li>
-                    <div class="dropdown"></div>
+                    <div class="dropdown carrinho">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
                             <img src="../static/imgs/icons/carrinho.svg" alt="carrinho">
                         </button>
@@ -31,9 +32,9 @@
                           <a href="#">Limpar carrinho</a>
                         </form>
                       </div>
-                    <div class="dropdown">
+                    <div class="dropdown login">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                          <img src="../static/imgs/icons/user.svg" alt="">
+                          <img src="../static/imgs/icons/user.svg" alt="usuario">
                         </button>
                         <form class="dropdown-menu p-4">
                           <div class="mb-3">
@@ -53,8 +54,10 @@
                             </div>
                           </div>
                           <button type="submit" class="btn btn-primary">Entrar</button>
-                          <a href="recuperarSenha">Esqueci minha senha</a>
-                          <a href="registrar">Criar conta</a>
+                          <div class="recuperarConta">
+                            <a href="recuperarSenha">Esqueci minha senha</a>
+                            <a href="registrar">Criar conta</a>
+                          </div>
                         </form>
                       </div>
                 </li>
@@ -134,8 +137,18 @@
     <footer>
         <ol>
             <li><a href="">Contato</a></li>
-            <li><a href="">Politica de reembolso e devolução</a></li>
             <li><a href="">Redes sociais</a></li>
+            <li><a href="">Trabalhe conosco</a></li>
+        </ol>
+        <ol>
+          <li><a href="">Politica de reembolso e devolução</a></li>
+          <li><a href="">Dúvidas frequentes</a></li>
+          <li><a href="">Tabela de medidas</a></li>
+        </ol>
+        <ol>
+          <li><a href="">Acompanhe seu pedido</a></li>
+          <li><a href="">Política de frete grátis</a></li>
+          <li><a href="">Encontre uma loja</a></li>
         </ol>
     </footer>
 
