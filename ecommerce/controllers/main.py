@@ -12,9 +12,11 @@ def index():
     loginform = LoginForm()
     if(loginform.validate_on_submit()):
         cursor = db.cursor()
-        usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario=%s and senha = %s", (loginform.usuario.data, loginform.senha.data))
+        usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and senha =%s", (loginform.usuario.data, loginform.senha.data))
         if(usuarioDB > 0):
-            login_user(Usuario.instanciar(cursor.fetchone("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data)), loginform.usuario.data, cursor.fetchone("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data)), loginform.senha.data))
+            cursorIdEmail = db.cursor()
+            cursorIdEmail.execute("SELECT id, email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            login_user(Usuario.instanciar(cursorIdEmail.fetchone(), loginform.usuario.data, cursorIdEmail.fetchone(), loginform.senha.data))
             flash("Logado!")
         else:
             flash("Valores inválidos!")

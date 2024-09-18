@@ -19,7 +19,8 @@ class Usuario():
     def get_id(self):
         return str(self.id)
     
-    def instanciar(self, nome, email, senha):
+    def instanciar(self, id, nome, email, senha):
+        self.id = id
         self.nome = nome
         self.email = email
         self.senha = senha
