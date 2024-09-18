@@ -5,9 +5,9 @@ from ecommerce import app, db
 from ecommerce.models.tables import Usuario
 from ecommerce.models.forms import LoginForm
 
-@app.route("/home")
-@app.route("/index")
-@app.route("/")
+@app.route("/home", methods=["GET", "POST"])
+@app.route("/index", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
     loginform = LoginForm()
     if(loginform.validate_on_submit()):
@@ -20,32 +20,32 @@ def index():
             flash("Valores inválidos!")
     return render_template('index.html', login_form=loginform)
 
-@app.route("/feminino_vestuario")
+@app.route("/feminino_vestuario", methods=["GET", "POST"])
 def feminino():
     loginform = LoginForm()
     return render_template('feminino.html', login_form=loginform)
 
-@app.route("/feminino_tenis")
+@app.route("/feminino_tenis", methods=["GET", "POST"])
 def feminino_tenis():
     loginform = LoginForm()
     return render_template('tenisFeminino.html', login_form=loginform)
 
-@app.route("/feminino_acessorios")
+@app.route("/feminino_acessorios", methods=["GET", "POST"])
 def feminino_acessorios():
     loginform = LoginForm()
     return render_template('acessoriosFeminino.html', login_form=loginform)
 
-@app.route("/masculino_vestuario")
+@app.route("/masculino_vestuario", methods=["GET", "POST"])
 def masculino():
     loginform = LoginForm()
     return render_template('masculino.html', login_form=loginform)
 
-@app.route("/masculino_tenis")
+@app.route("/masculino_tenis", methods=["GET", "POST"])
 def masculino_tenis():
     loginform = LoginForm()
     return render_template('tenisMasculino.html', login_form=loginform)
 
-@app.route("/masculino_acessorios")
+@app.route("/masculino_acessorios", methods=["GET", "POST"])
 def masculino_acessorios():
     loginform = LoginForm()
     return render_template('acessoriosMasculino.html', login_form=loginform)
