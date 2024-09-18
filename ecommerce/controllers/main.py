@@ -1,7 +1,6 @@
 from flask import render_template, flash
 from flask_login import login_user
-from ecommerce import app
-from ecommerce import db
+from ecommerce import app, db
 
 from ecommerce.models.tables import Usuario
 from ecommerce.models.forms import LoginForm
