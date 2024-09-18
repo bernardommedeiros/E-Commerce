@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block tittle %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles/global.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+    <link rel="stylesheet" href="../static/styles/signin.css">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <main>
+        <div class="signup-box">
+            <h1>Cadastre-se</h1>
+            <h4>crie sua conta</h4>
+            <form action="#">
+                <label for="">Nome Completo</label>
+                <input type="text" placeholder="Nome Completo">
+
+                <label for="">Email</label>
+                <input type="email" placeholder="E-mail">
+
+                <label for="">Senha</label>
+                <input type="password" placeholder="Senha">
+
+                <label><input type="checkbox" name="regras" id="checkb"><p> Li, e aceito os <a href="#">Termos de Uso</a> e <a href="#">Políticas de privacidade</a></p></label>
+
+                <input type="button" value="Confirmar">
+            </form>
+        </div>
+    </main>
+    {% block content%}{% endblock %}
+
+    <footer>
+        <ol>
+            <li><a href="">Contato</a></li>
+            <li><a href="">Redes sociais</a></li>
+            <li><a href="">Trabalhe conosco</a></li>
+        </ol>
+        <ol>
+          <li><a href="">Politica de reembolso e devolução</a></li>
+          <li><a href="">Dúvidas frequentes</a></li>
+          <li><a href="">Tabela de medidas</a></li>
+        </ol>
+        <ol>
+          <li><a href="">Acompanhe seu pedido</a></li>
+          <li><a href="">Política de frete grátis</a></li>
+          <li><a href="">Encontre uma loja</a></li>
+        </ol>
+    </footer>
+
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
