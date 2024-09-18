@@ -53,17 +53,6 @@
                             </div>
                           </div>
                           <button type="submit" class="btn btn-primary">Entrar</button>
-                          {% with messages = get_flashed_messages() %}
-                            {% if messages %}
-                            <div class="alert alert-warning">
-                              <ul class="flashes">
-                                {% for message in messages %}
-                                  <li>{{ message }}</li>
-                                {% endfor %}
-                              </ul>
-                          </div>
-                          {% endif %}
-                          {% endwith %}
                           <div class="recuperarConta">
                             <a href="recuperarSenha">Esqueci minha senha</a>
                             <a href="registrar">Criar conta</a>
@@ -74,6 +63,17 @@
             </ol>
         </nav>
     </header>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div class="alert alert-warning">
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    {% endwith %}
     <nav class="productsTypes">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -16,7 +16,9 @@ def index():
         if(usuarioDB > 0):
             cursorIdEmail = db.cursor()
             cursorIdEmail.execute("SELECT id, email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
-            login_user(Usuario.instanciar(cursorIdEmail.fetchone(), loginform.usuario.data, cursorIdEmail.fetchone(), loginform.senha.data))
+            usuarioOBJ = Usuario()
+            usuarioOBJ.instanciar(cursorIdEmail.fetchone(), loginform.usuario.data, cursorIdEmail.fetchone(), loginform.senha.data)
+            login_user(usuarioOBJ)
             flash("Logado!")
         else:
             flash("Valores inválidos!")

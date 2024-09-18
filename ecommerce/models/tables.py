@@ -1,23 +1,10 @@
-class Usuario():
-    id = int
-    nome = str
-    email = str
-    senha = str
+from flask_login import UserMixin
 
-    @property
-    def is_authenticated(self):
-        return True
-    
-    @property
-    def is_active(self):
-        return True
-    
-    @property
-    def is_anonymous(self):
-        return False
-    
-    def get_id(self):
-        return str(self.id)
+class Usuario(UserMixin):
+    id = 0
+    nome = ""
+    email = ""
+    senha = ""
     
     def instanciar(self, id, nome, email, senha):
         self.id = id
