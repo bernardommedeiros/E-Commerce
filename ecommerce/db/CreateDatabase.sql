@@ -2,9 +2,9 @@ USE ecommerce;
 
 CREATE TABLE users(
     id integer not null auto_increment,
-    first_name VARCHAR(100) not null,
-    last_name VARCHAR(100) not null,
-    age INT not null,
+    name VARCHAR(100) not null,
+    email VARCHAR(150) not null,
+    password VARCHAR(50) not null,
     PRIMARY KEY(id)
 );
 
