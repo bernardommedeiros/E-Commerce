@@ -13,7 +13,8 @@ lm = LoginManager(app)
 @lm.user_loader
 def load_user(id):
     cursor = db.cursor()
-    usuarioDB = cursor.fetchall("SELECT * FROM users WHERE id = %s", (id))
+    cursor.execute("SELECT * FROM users WHERE id = %s", (id))
+    usuarioDB = cursor.fetchall()
     return Usuario(usuarioDB[0], usuarioDB[1], usuarioDB[2], usuarioDB[3])
 
 from ecommerce.controllers import main
