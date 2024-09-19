@@ -116,9 +116,10 @@ nav div button.dropdown-toggle:after{
 nav ol li div.carrinho{
     display: flex;
     flex-direction: column;
+    gap: 1em;
 }
 
-nav ol li div.login form div.recuperarConta{
+nav ol div div.login form div.recuperarConta{
     display: flex;
     flex-direction: column;
     gap: .5em;

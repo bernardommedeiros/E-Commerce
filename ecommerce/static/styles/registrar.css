@@ -26,7 +26,7 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: .5em;
+    gap: 1em;
     width: 400px;
     height: 620px;
     margin: 5em auto;
@@ -34,6 +34,14 @@ main{
     border-radius: 40px;
     box-shadow: 2px 1px 3px black;
     color: white;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
 }
 
 main > div > h2{
@@ -79,6 +87,11 @@ main > form input[type="submit"]{
     outline: none;
     background-color: white;
     font-size: 15px;
+    padding-bottom: 18px;
+}
+
+main > form input[type="submit"]:hover{
+    background-color: var(--Color02);
 }
 
 main > form > div.inputBox{
@@ -95,8 +108,3 @@ main > form > div.termos{
 
 main > form > div label {font-size: 15px;}
 
-
-main > form input[type="submit"]:hover{
-    background-color: var(--Color02);
-    padding-bottom: 18px;
-}

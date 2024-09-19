@@ -17,6 +17,35 @@
         <a href="index"><img src="../static/imgs/logo/logo.png" alt="caixa de entrada"></a>
         <a href="index" class="name">HYPE</a>
     </header>
+    <div>
+      <form action="" method="POST">
+        {{ adm_form.csrf_token }}
+        <div class="inputBox">
+          <label for="">Usuário</label>
+          {{ adm_form.usuario }}
+      </div>
+      <div class="inputBox">
+        <label for="">Email</label>
+        {{ adm_form.email }}
+      </div>
+      <div class="inputBox">
+          <label for="">Senha</label>
+          {{ adm_form.senha }}
+      </div>
+      <input type="submit" value="Confirmar">
+      </form>
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div class="alert alert-warning">
+          <ul class="flashes">
+          {% for message in messages %}
+              <li>{{ message }}</li>
+          {% endfor %}
+          </ul>
+      </div>
+      {% endif %}
+      {% endwith %}
+    </div>
     <main>
       {% for user in users %}
       <div>

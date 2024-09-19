@@ -160,7 +160,14 @@ def registrar():
 
 @app.route("/gerenciador_usuarios", methods=["GET", "POST"])
 def gerenciador_usuarios():
+    criarUsuarioAdm = RegisterForm()
+    if(criarUsuarioAdm.validate_on_submit()):
+        cursorCriarUsuario = db.cursor()
+        existeNoDB = cursorCriarUsuario.execute("SELECT * FROM users WHERE usuario =%s and email=%s", (criarUsuarioAdm.usuario.data, criarUsuarioAdm.email.data))
+        if(existeNoDB == 0):
+            cursorCriarUsuario.execute("INSERT INTO users (usuario, email, senha) values (%s, %s, %s)", (criarUsuarioAdm.usuario.data, criarUsuarioAdm.email.data, criarUsuarioAdm.senha.data))
+            cursorCriarUsuario.connection.commit()
     cursor = db.cursor()
     cursor.execute("SELECT * FROM users WHERE id > 3")
     users = cursor.fetchall()
-    return render_template('gerenciadorUsuarios.html', users = users)
+    return render_template('gerenciadorUsuarios.html', users = users, adm_form = criarUsuarioAdm)
