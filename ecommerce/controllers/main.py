@@ -1,9 +1,20 @@
-from flask import render_template, flash
+from flask import render_template, flash, redirect, url_for
 from flask_login import login_user
-from ecommerce import app, db
+from flask_login import logout_user
+from ecommerce import app, db, lm
 
 from ecommerce.models.tables import Usuario
 from ecommerce.models.forms import LoginForm
+
+@lm.user_loader
+def load_user(id):
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM users WHERE id = %s", (id))
+    usuarioDB = cursor.fetchall()
+    user = Usuario()
+    if(len(usuarioDB) > 0):
+        user.instanciar(usuarioDB[0], usuarioDB[1], usuarioDB[2], usuarioDB[3])
+    return user
 
 @app.route("/home", methods=["GET", "POST"])
 @app.route("/index", methods=["GET", "POST"])
@@ -19,9 +30,9 @@ def index():
             usuarioOBJ = Usuario()
             usuarioOBJ.instanciar(cursorIdEmail.fetchone(), loginform.usuario.data, cursorIdEmail.fetchone(), loginform.senha.data)
             login_user(usuarioOBJ)
-            flash("Logado!")
+            flash("Logado com sucesso!")
         else:
-            flash("Valores inválidos!")
+            flash("Usuário ou senha inválido(s)")
     return render_template('index.html', login_form=loginform)
 
 @app.route("/feminino_vestuario", methods=["GET", "POST"])
@@ -53,3 +64,8 @@ def masculino_tenis():
 def masculino_acessorios():
     loginform = LoginForm()
     return render_template('acessoriosMasculino.html', login_form=loginform)
+
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for("index"))
