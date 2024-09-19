@@ -3,7 +3,7 @@ from flask_login import login_user, logout_user
 from ecommerce import app, db, lm
 
 from ecommerce.models.tables import Usuario
-from ecommerce.models.forms import LoginForm, RegisterForm
+from ecommerce.models.forms import LoginForm, RegisterForm, AdmForm
 
 usuarioOBJ = Usuario()
 
@@ -160,13 +160,16 @@ def registrar():
 
 @app.route("/gerenciador_usuarios", methods=["GET", "POST"])
 def gerenciador_usuarios():
-    criarUsuarioAdm = RegisterForm()
+    criarUsuarioAdm = AdmForm()
     if(criarUsuarioAdm.validate_on_submit()):
         cursorCriarUsuario = db.cursor()
         existeNoDB = cursorCriarUsuario.execute("SELECT * FROM users WHERE usuario =%s and email=%s", (criarUsuarioAdm.usuario.data, criarUsuarioAdm.email.data))
         if(existeNoDB == 0):
             cursorCriarUsuario.execute("INSERT INTO users (usuario, email, senha) values (%s, %s, %s)", (criarUsuarioAdm.usuario.data, criarUsuarioAdm.email.data, criarUsuarioAdm.senha.data))
             cursorCriarUsuario.connection.commit()
+            flash(f"Conta criada com sucesso!")
+        else:
+            flash(f"O usuário {criarUsuarioAdm.usuario.data} ou o email {criarUsuarioAdm.email.data} já existem no nosso banco de dados")
     cursor = db.cursor()
     cursor.execute("SELECT * FROM users WHERE id > 3")
     users = cursor.fetchall()

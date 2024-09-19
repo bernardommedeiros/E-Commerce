@@ -13,3 +13,8 @@ class RegisterForm(FlaskForm):
     email = EmailField("email", validators=[DataRequired()])
     senha = PasswordField("senha", validators=[DataRequired()])
     termo = BooleanField("termo", validators=[DataRequired()])
+
+class AdmForm(FlaskForm):
+    usuario = StringField("usuario", validators=[DataRequired()])
+    email = EmailField("email", validators=[DataRequired()])
+    senha = PasswordField("senha", validators=[DataRequired()])

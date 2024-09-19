@@ -1,14 +1,33 @@
 main {
+    background-color: white;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: 1em;
     gap: 2em;
+    padding: 1em;
 }
 
 main div{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: .5em;
     gap: 1em;
     border: 1px solid gray;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+body > div {
+    background-color: var(--Color02);
+    border: 1px solid gray;
+}
+
+body > div form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 2em;
 }
