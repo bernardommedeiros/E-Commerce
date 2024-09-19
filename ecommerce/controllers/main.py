@@ -27,11 +27,13 @@ def index():
         cursor = db.cursor()
         usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and senha =%s", (loginform.usuario.data, loginform.senha.data))
         if(usuarioDB > 0):
-            cursorIdEmail = db.cursor()
-            cursorIdEmail.execute("SELECT id, email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
-            usuarioOBJ.instanciar(cursorIdEmail.fetchone(), loginform.usuario.data, cursorIdEmail.fetchone(), loginform.senha.data)
+            cursorId = db.cursor()
+            cursorId.execute("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            cursorEmail = db.cursor()
+            cursorEmail.execute("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            usuarioOBJ.instanciar(cursorId.fetchone(), loginform.usuario.data, cursorEmail.fetchone(), loginform.senha.data)
             login_user(usuarioOBJ)
-            flash(f"Logado com sucesso! {usuarioOBJ.id}, {usuarioOBJ.get_id}")
+            flash(f"Logado com sucesso!")
         else:
             flash("Usuário ou senha inválido(s)")
     return render_template('index.html', login_form=loginform, usuario=usuarioOBJ)
