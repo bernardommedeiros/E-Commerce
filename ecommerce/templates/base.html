@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block tittle %}{% endblock %}</title>
+    <link rel="shortcut icon" href="../static/imgs/logo/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../static/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/styles/global.css">
     <link rel="stylesheet" href="../static/styles/header.css">
@@ -25,73 +26,73 @@
     <header>
         <nav>
             <ol>
-                <li id="logomarca">
-                    <a href="index"><img src="../static/imgs/logo/logo.png" alt="caixa de entrada"></a>
-                    <a href="index" class="name">NEW HYPE</a>
-                </li>
-                <li id="searchbar">
-                    <label for="input"><img src="../static/imgs/icons/search_6033394.png" alt="lupa"label>
-                    <input id="input" type="text" name="" placeholder="Buscar produtos">
-                </li>
-                <div>
-                    <div class="dropdown carrinho">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                            <img src="../static/imgs/icons/carrinho.svg" alt="carrinho">
-                        </button>
-                        <form class="dropdown-menu p-4">
-                          <button type="submit" class="btn btn-primary">Finalizar Compra</button>
-                          <a href="#">Limpar carrinho</a>
-                        </form>
-                      </div>
-                    {% if not current_user.is_authenticated or current_user.get_id() == "1" or current_user.get_id() == "0" or current_user.get_id() == "2" %}
-                    <div class="dropdown login">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                          <img src="../static/imgs/icons/user.svg" alt="usuario">
-                        </button>
-                        <form class="dropdown-menu p-4" method="POST">
-                          {{ login_form.csrf_token }}
-                          <div class="mb-3">
-                            <label class="form-label">Usuário</label>
-                            {{ login_form.usuario }}
+              <li id="logomarca">
+                  <a href="index"><img src="../static/imgs/logo/logo.png" alt="caixa de entrada"></a>
+                  <a href="index" class="name">NEW HYPE</a>
+              </li>
+              <li id="searchbar">
+                  <label for="input"><img src="../static/imgs/icons/search_6033394.png" alt="lupa"label>
+                  <input id="input" type="text" name="" placeholder="Buscar produtos">
+              </li>
+              <div>
+                  <div class="dropdown carrinho">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                          <img src="../static/imgs/icons/carrinho.svg" alt="carrinho">
+                      </button>
+                      <form class="dropdown-menu p-4">
+                        <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+                        <a href="#">Limpar carrinho</a>
+                      </form>
+                    </div>
+                  {% if not current_user.is_authenticated or current_user.get_id() == "1" or current_user.get_id() == "0" or current_user.get_id() == "2" %}
+                  <div class="dropdown login">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                        <img src="../static/imgs/icons/user.svg" alt="usuario">
+                      </button>
+                      <form class="dropdown-menu p-4" method="POST">
+                        {{ login_form.csrf_token }}
+                        <div class="mb-3">
+                          <label class="form-label">Usuário</label>
+                          {{ login_form.usuario }}
+                        </div>
+                        <div class="mb-3">
+                          <label for="senhaLoginInput" class="form-label">Senha</label>
+                          {{ login_form.senha }}
+                        </div>
+                        <div class="mb-3">
+                          <div class="checkbox">
+                            {{ login_form.lembrar_senha }}
+                            <label>Lembrar senha</label>
                           </div>
-                          <div class="mb-3">
-                            <label for="senhaLoginInput" class="form-label">Senha</label>
-                            {{ login_form.senha }}
-                          </div>
-                          <div class="mb-3">
-                            <div class="checkbox">
-                              {{ login_form.lembrar_senha }}
-                              <label>Lembrar senha</label>
-                            </div>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Entrar</button>
-                          <div class="recuperarConta">
-                            <a href="recuperarSenha">Esqueci minha senha</a>
-                            <a href="registrar">Criar conta</a>
-                          </div>
-                        </form>
-                      </div>
-                      {% elif usuario.id == 3 %}
-                      <div class="dropdown">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                          <img src="../static/imgs/icons/user.svg" alt="usuario">
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Gerenciar Usuários</a></li>
-                          <li><a class="dropdown-item" href="logout">Sair da conta</a></li>
-                        </ul>
-                      </div>
-                      {% else %}
-                      <div class="dropdown"></div>
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                          <img src="../static/imgs/icons/user.svg" alt="usuario">
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="logout">Sair da conta</a></li>
-                        </ul>
-                      </div>
-                      {% endif %}
-                </li>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <div class="recuperarConta">
+                          <a href="recuperarSenha">Esqueci minha senha</a>
+                          <a href="registrar">Criar conta</a>
+                        </div>
+                      </form>
+                    </div>
+                    {% elif usuario.id == 3 %}
+                    <div class="dropdown">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                        <img src="../static/imgs/icons/user.svg" alt="usuario">
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Gerenciar Usuários</a></li>
+                        <li><a class="dropdown-item" href="logout">Sair da conta</a></li>
+                      </ul>
+                    </div>
+                    {% else %}
+                    <div class="dropdown">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                        <img src="../static/imgs/icons/user.svg" alt="usuario">
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="logout">Sair da conta</a></li>
+                      </ul>
+                    </div>
+                    {% endif %}
+                </div>
             </ol>
         </nav>
     </header>

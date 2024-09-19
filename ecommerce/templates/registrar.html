@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block tittle %}Registrar{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="../static/styles/registrar.css">
+{% endblock %}
+{% block content %}
+<main>
+    <div class="signup-box">
+        <h1>Cadastre-se</h1>
+        <p>crie sua conta</p>
+        <form action="#" method="POST">
+            {{ register_form.csrf_token }}
+            <label for="">Nome Completo</label>
+            {{ register_form.usuario }}
+
+            <label for="">Email</label>
+            {{ register_form.email }}
+
+            <label for="">Senha</label>
+            {{ register_form.senha }}
+
+            <div class="checkbox">
+                {{ register_form.termo }}
+                <label>Li, e aceito os <a href="#">Termos de Uso</a> e <a href="#">Políticas de privacidade</a></label>
+            </div>
+
+            <input type="submit" value="Confirmar">
+        </form>
+    </div>
+</main>
+{% endblock %}

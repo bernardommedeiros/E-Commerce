@@ -1,10 +1,9 @@
 from flask import render_template, flash, redirect, url_for
-from flask_login import login_user
-from flask_login import logout_user
+from flask_login import login_user, logout_user
 from ecommerce import app, db, lm
 
 from ecommerce.models.tables import Usuario
-from ecommerce.models.forms import LoginForm
+from ecommerce.models.forms import LoginForm, RegisterForm
 
 usuarioOBJ = Usuario()
 
@@ -35,32 +34,124 @@ def index():
 @app.route("/feminino_vestuario", methods=["GET", "POST"])
 def feminino():
     loginform = LoginForm()
-    return render_template('feminino.html', login_form=loginform)
+    if(loginform.validate_on_submit()):
+        cursor = db.cursor()
+        usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and senha =%s", (loginform.usuario.data, loginform.senha.data))
+        if(usuarioDB > 0):
+            cursorId = db.cursor()
+            cursorId.execute("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            cursorEmail = db.cursor()
+            cursorEmail.execute("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            usuarioOBJ.instanciar(cursorId.fetchone()[0], loginform.usuario.data, cursorEmail.fetchone()[0], loginform.senha.data)
+            login_user(usuarioOBJ)
+            flash(f"Logado com sucesso!")
+        else:
+            flash("Usuário ou senha inválido(s)")
+    return render_template('feminino.html', login_form=loginform, usuario=usuarioOBJ)
 
 @app.route("/feminino_tenis", methods=["GET", "POST"])
 def feminino_tenis():
     loginform = LoginForm()
-    return render_template('tenisFeminino.html', login_form=loginform)
+    if(loginform.validate_on_submit()):
+        cursor = db.cursor()
+        usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and senha =%s", (loginform.usuario.data, loginform.senha.data))
+        if(usuarioDB > 0):
+            cursorId = db.cursor()
+            cursorId.execute("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            cursorEmail = db.cursor()
+            cursorEmail.execute("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            usuarioOBJ.instanciar(cursorId.fetchone()[0], loginform.usuario.data, cursorEmail.fetchone()[0], loginform.senha.data)
+            login_user(usuarioOBJ)
+            flash(f"Logado com sucesso!")
+        else:
+            flash("Usuário ou senha inválido(s)")
+    return render_template('tenisFeminino.html', login_form=loginform, usuario=usuarioOBJ)
 
 @app.route("/feminino_acessorios", methods=["GET", "POST"])
 def feminino_acessorios():
     loginform = LoginForm()
-    return render_template('acessoriosFeminino.html', login_form=loginform)
+    if(loginform.validate_on_submit()):
+        cursor = db.cursor()
+        usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and senha =%s", (loginform.usuario.data, loginform.senha.data))
+        if(usuarioDB > 0):
+            cursorId = db.cursor()
+            cursorId.execute("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            cursorEmail = db.cursor()
+            cursorEmail.execute("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            usuarioOBJ.instanciar(cursorId.fetchone()[0], loginform.usuario.data, cursorEmail.fetchone()[0], loginform.senha.data)
+            login_user(usuarioOBJ)
+            flash(f"Logado com sucesso!")
+        else:
+            flash("Usuário ou senha inválido(s)")
+    return render_template('acessoriosFeminino.html', login_form=loginform, usuario=usuarioOBJ)
 
 @app.route("/masculino_vestuario", methods=["GET", "POST"])
 def masculino():
     loginform = LoginForm()
-    return render_template('masculino.html', login_form=loginform)
+    if(loginform.validate_on_submit()):
+        cursor = db.cursor()
+        usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and senha =%s", (loginform.usuario.data, loginform.senha.data))
+        if(usuarioDB > 0):
+            cursorId = db.cursor()
+            cursorId.execute("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            cursorEmail = db.cursor()
+            cursorEmail.execute("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            usuarioOBJ.instanciar(cursorId.fetchone()[0], loginform.usuario.data, cursorEmail.fetchone()[0], loginform.senha.data)
+            login_user(usuarioOBJ)
+            flash(f"Logado com sucesso!")
+        else:
+            flash("Usuário ou senha inválido(s)")
+    return render_template('masculino.html', login_form=loginform, usuario=usuarioOBJ)
 
 @app.route("/masculino_tenis", methods=["GET", "POST"])
 def masculino_tenis():
     loginform = LoginForm()
-    return render_template('tenisMasculino.html', login_form=loginform)
+    if(loginform.validate_on_submit()):
+        cursor = db.cursor()
+        usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and senha =%s", (loginform.usuario.data, loginform.senha.data))
+        if(usuarioDB > 0):
+            cursorId = db.cursor()
+            cursorId.execute("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            cursorEmail = db.cursor()
+            cursorEmail.execute("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            usuarioOBJ.instanciar(cursorId.fetchone()[0], loginform.usuario.data, cursorEmail.fetchone()[0], loginform.senha.data)
+            login_user(usuarioOBJ)
+            flash(f"Logado com sucesso!")
+        else:
+            flash("Usuário ou senha inválido(s)")
+    return render_template('tenisMasculino.html', login_form=loginform, usuario=usuarioOBJ)
 
 @app.route("/masculino_acessorios", methods=["GET", "POST"])
 def masculino_acessorios():
     loginform = LoginForm()
-    return render_template('acessoriosMasculino.html', login_form=loginform)
+    if(loginform.validate_on_submit()):
+        cursor = db.cursor()
+        usuarioDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and senha =%s", (loginform.usuario.data, loginform.senha.data))
+        if(usuarioDB > 0):
+            cursorId = db.cursor()
+            cursorId.execute("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            cursorEmail = db.cursor()
+            cursorEmail.execute("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
+            usuarioOBJ.instanciar(cursorId.fetchone()[0], loginform.usuario.data, cursorEmail.fetchone()[0], loginform.senha.data)
+            login_user(usuarioOBJ)
+            flash(f"Logado com sucesso!")
+        else:
+            flash("Usuário ou senha inválido(s)")
+    return render_template('acessoriosMasculino.html', login_form=loginform, usuario=usuarioOBJ)
+
+@app.route("/registrar", methods=["GET", "POST"])
+def registrar():
+    registerform = RegisterForm()
+    if(registerform.validate_on_submit()):
+        cursor = db.cursor()
+        existeNoDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and email=%s", (registerform.usuario.data, registerform.email.data))
+        if(existeNoDB == 0):
+            cursor.execute("INSERT INTO users (usuario, email, senha) values (%s, %s, %s)", (registerform.usuario.data, registerform.email.data, registerform.senha.data))
+            cursor.connection.commit()
+            flash(f"Conta criada com sucesso!")
+        else:
+            flash(f"O usuário {registerform.usuario.data} ou o email {registerform.email.data} já existem no nosso banco de dados")
+    return render_template('registrar.html', logout_form=RegisterForm)
 
 @app.route("/logout")
 def logout():
