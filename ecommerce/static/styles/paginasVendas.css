@@ -29,7 +29,7 @@ body > div main > div.card{text-align: center; width: 28em;}
 
 body div main{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 2em;
     width: 80vw;
     padding: 1em;
@@ -37,7 +37,6 @@ body div main{
 
 @media screen and (max-width: 768px){
     body div main{
-        flex-direction: column;
         margin: 0 auto;
         padding: 1em 0;
     }
