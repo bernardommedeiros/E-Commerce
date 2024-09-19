@@ -10,7 +10,7 @@ from ecommerce.models.forms import LoginForm
 def load_user(id):
     cursor = db.cursor()
     cursor.execute("SELECT * FROM users WHERE id = %s", (id))
-    usuarioDB = cursor.fetchall()
+    usuarioDB = cursor.fetchone()
     user = Usuario()
     if(len(usuarioDB) > 0):
         user.instanciar(usuarioDB[0], usuarioDB[1], usuarioDB[2], usuarioDB[3])
