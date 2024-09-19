@@ -8,5 +8,7 @@ Ferramentas:
 Conhecimentos necessários:
 - Html
 - Css
+- Bootstrap
 - Python
+- SQL
 - CRUD
