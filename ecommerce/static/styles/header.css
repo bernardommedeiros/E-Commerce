@@ -64,7 +64,7 @@ header nav ol li#searchbar label img{
     cursor: pointer;
 }
 
-header nav > div{
+header nav ol > div{
     display: flex;
     flex-direction: row;
 } 
