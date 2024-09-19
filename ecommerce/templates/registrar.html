@@ -1,11 +1,21 @@
-{% extends "base.html" %}
-{% block tittle %}Registrar{% endblock %}
-{% block css %}
-<link rel="stylesheet" href="../static/styles/registrar.css">
-{% endblock %}
-{% block content %}
-<main>
-    <div class="signup-box">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+    <link rel="shortcut icon" href="../static/imgs/logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles/global.css">
+    <link rel="stylesheet" href="../static/styles/registrar.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+</head>
+<body>
+    <header>
+        <a href="index"><img src="../static/imgs/logo/logo.png" alt="caixa de entrada"></a>
+        <a href="index" class="name">NEW HYPE</a>
+    </header>
+    <main>
         <h1>Cadastre-se</h1>
         <p>crie sua conta</p>
         <form action="#" method="POST">
@@ -19,13 +29,44 @@
             <label for="">Senha</label>
             {{ register_form.senha }}
 
-            <div class="checkbox">
+            <div>
+                <h1>asd</h1>
                 {{ register_form.termo }}
                 <label>Li, e aceito os <a href="#">Termos de Uso</a> e <a href="#">Políticas de privacidade</a></label>
             </div>
 
             <input type="submit" value="Confirmar">
         </form>
-    </div>
-</main>
-{% endblock %}
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-warning">
+            <ul class="flashes">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </main>
+    <footer>
+        <ol>
+            <li><a href="">Contato</a></li>
+            <li><a href="">Redes sociais</a></li>
+            <li><a href="">Trabalhe conosco</a></li>
+        </ol>
+        <ol>
+          <li><a href="">Politica de reembolso e devolução</a></li>
+          <li><a href="">Dúvidas frequentes</a></li>
+          <li><a href="">Tabela de medidas</a></li>
+        </ol>
+        <ol>
+          <li><a href="">Acompanhe seu pedido</a></li>
+          <li><a href="">Política de frete grátis</a></li>
+          <li><a href="">Encontre uma loja</a></li>
+        </ol>
+    </footer>
+
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
