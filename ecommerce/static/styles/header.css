@@ -69,13 +69,22 @@ header nav ol > div{
     flex-direction: row;
 } 
 
-nav > div[class="dropdown"]{
+
+
+body > nav{
+    display: flex;
+    justify-content: space-evenly;
+    background-color:var(--navColor);
+    padding: .5em;
+}
+
+body > nav > div[class="dropdown"]{
     text-decoration: none;
     color: white;
 }
 
 /* Underline effect */
-nav > div[class="dropdown"]::after{
+body > nav > div[class="dropdown"]::after{
     content: '';
     position: absolute;
     height: 2px;
@@ -86,42 +95,61 @@ nav > div[class="dropdown"]::after{
     transition: all .2s;
 }
 
-nav > div[class="dropdown"]:hover::after{
+body > nav > div[class="dropdown"]:hover::after{
     width: 100%;
     left: 0;
 }
 
-
-nav.productsTypes{
-    display: flex;
-    justify-content: space-evenly;
-    background-color:var(--navColor);
-    padding: .5em;
-}
-
-nav div button.dropdown-toggle{
+body > nav div button.dropdown-toggle{
     background-color: transparent;
     border: none;
 }
 
-nav div button.dropdown-toggle:hover{
+body > nav div button.dropdown-toggle:hover{
     background-color: transparent;
 }
 
-nav div button.dropdown-toggle:after{
+body > nav div button.dropdown-toggle:after{
     content: none;
 }
 
 
-nav ol li div.carrinho{
+body > nav ol li div.carrinho{
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
 
-nav ol div div.login form div.recuperarConta{
+body > nav ol div div.login form div.recuperarConta{
     display: flex;
     flex-direction: column;
     gap: .5em;
     margin-top: .5em;
+}
+
+@media screen and (max-width: 768px){
+    header nav ol li#searchbar{
+        display: none;
+    }
+
+    header nav > ol{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: var(--headerColor);
+        padding: .5em;
+        margin: 0;
+        border-bottom: 1px solid white;
+    }
+
+    body > nav{
+        display: flex;
+        justify-content: space-evenly;
+        background-color:var(--navColor);
+        padding: .5em;
+    }
+
+    body > nav div.substituivel{
+        display: none;
+    }
 }

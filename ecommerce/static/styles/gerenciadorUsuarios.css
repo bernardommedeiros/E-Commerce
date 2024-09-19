@@ -6,6 +6,7 @@ main {
     flex-wrap: wrap;
     gap: 2em;
     padding: 1em;
+    margin: 0;
 }
 
 main div{
@@ -23,7 +24,7 @@ main div{
 body > div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     gap: 1em;
     background-color: var(--Color02);
     border: 1px solid gray;
