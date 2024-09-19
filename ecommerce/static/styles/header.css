@@ -34,15 +34,6 @@ header nav > ol > li#logomarca a.name{
     text-decoration: none;
 }
 
-header > nav div button.dropdown-toggle{
-    background-color: transparent;
-    border: none;
-}
-
-header > nav div button.dropdown-toggle:hover{
-    background-color: transparent;
-}
-
 header > nav div button.dropdown-toggle:after{
     content: none;
 }
@@ -94,7 +85,9 @@ header nav ol li#searchbar label img{
 header nav ol > div{
     display: flex;
     flex-direction: row;
-} 
+}
+
+
 
 
 
@@ -127,19 +120,43 @@ body > nav > div:hover::after{
     left: 0;
 }
 
-@media screen and (max-width: 768px){
-    header nav ol li#searchbar{
-        display: none;
-    }
 
+nav div button.dropdown-toggle{
+    background-color: transparent;
+    border: none;
+}
+
+nav div button.dropdown-toggle:hover{
+    background-color: transparent;
+}
+
+
+
+@media screen and (max-width: 768px){
+    
     header nav > ol{
         display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        flex-direction: column;
         background-color: var(--headerColor);
         padding: .5em;
         margin: 0;
         border-bottom: 1px solid white;
+    }
+
+    header nav > ol > li#logomarca a.name{
+        color: black;
+        font-size: 20px;
+        font-family: "Abril Fatface", serif;
+        text-decoration: none;
+    }
+
+    header nav > ol > li > a > img{
+        width: 5em;
+        height: 5em;
+    }
+    
+    header nav ol li#searchbar{
+        display: none;
     }
 
     body > nav{
