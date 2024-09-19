@@ -64,7 +64,10 @@ header nav ol li#searchbar label img{
     cursor: pointer;
 }
 
-
+header nav > div{
+    display: flex;
+    flex-direction: row;
+} 
 
 nav > div[class="dropdown"]{
     text-decoration: none;

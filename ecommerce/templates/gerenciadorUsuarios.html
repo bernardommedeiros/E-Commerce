@@ -1,16 +1,28 @@
-{% extends 'base.html' %}
-{% block tittle %}Gerenciar Usuários{% endblock %}
-{% block css %}
-<link rel="stylesheet" href="../static/styles/gerenciadorUsuarios.css">
-{% endblock %}
-{% block content %}
-<main>
-    {% for user in users %}
-    <div class="modal" tabindex="-1">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Usuários</title>
+    <link rel="shortcut icon" href="../static/imgs/logo/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/styles/global.css">
+    <link rel="stylesheet" href="../static/styles/registrar.css">
+    <link rel="stylesheet" href="../static/styles/footer.css">
+</head>
+<body>
+    <header>
+        <a href="index" class="name">NEW</a>
+        <a href="index"><img src="../static/imgs/logo/logo.png" alt="caixa de entrada"></a>
+        <a href="index" class="name">HYPE</a>
+    </header>
+    <main>
+      {% for user in users %}
+      <div class="modal" tabindex="-1">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">{{ user[1]}}</h5>
+              <h5 class="modal-title">{{ user[1] }}</h5>
             </div>
             <div class="modal-body">
               <p>Email: {{ user[2] }}</p>
@@ -22,6 +34,26 @@
           </div>
         </div>
       </div>
-    {% endfor %}
-</main>
-{% endblock %}
+      {% endfor %}
+    </main>
+    <footer>
+        <ol>
+            <li><a href="">Contato</a></li>
+            <li><a href="">Redes sociais</a></li>
+            <li><a href="">Trabalhe conosco</a></li>
+        </ol>
+        <ol>
+          <li><a href="">Politica de reembolso e devolução</a></li>
+          <li><a href="">Dúvidas frequentes</a></li>
+          <li><a href="">Tabela de medidas</a></li>
+        </ol>
+        <ol>
+          <li><a href="">Acompanhe seu pedido</a></li>
+          <li><a href="">Política de frete grátis</a></li>
+          <li><a href="">Encontre uma loja</a></li>
+        </ol>
+    </footer>
+
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
