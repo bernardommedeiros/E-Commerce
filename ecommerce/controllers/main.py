@@ -6,6 +6,8 @@ from ecommerce import app, db, lm
 from ecommerce.models.tables import Usuario
 from ecommerce.models.forms import LoginForm
 
+usuarioOBJ = Usuario()
+
 @lm.user_loader
 def load_user(id):
     cursor = db.cursor()
@@ -27,7 +29,6 @@ def index():
         if(usuarioDB > 0):
             cursorIdEmail = db.cursor()
             cursorIdEmail.execute("SELECT id, email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
-            usuarioOBJ = Usuario()
             usuarioOBJ.instanciar(cursorIdEmail.fetchone(), loginform.usuario.data, cursorIdEmail.fetchone(), loginform.senha.data)
             login_user(usuarioOBJ)
             flash("Logado com sucesso!")
