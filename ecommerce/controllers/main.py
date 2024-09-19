@@ -33,7 +33,7 @@ def index():
             flash("Logado com sucesso!")
         else:
             flash("Usuário ou senha inválido(s)")
-    return render_template('index.html', login_form=loginform)
+    return render_template('index.html', login_form=loginform, usuario=usuarioOBJ)
 
 @app.route("/feminino_vestuario", methods=["GET", "POST"])
 def feminino():
