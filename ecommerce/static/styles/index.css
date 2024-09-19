@@ -27,27 +27,26 @@ main > div{
 .d-c-inferior{grid-area: d-c-inferior;}
 
 main div .grid-component{
-    max-width: 40em;
+    max-width: 30em;
     max-height: 32em;
     transition: .5s;
 }
 
-main div[id="grid"] .grid-component:hover{
+main div .grid-component:hover{
     cursor: pointer;
 }
 
-main div[id="grid"] .grid-img, main div[id="grid"] .grid-img-small{
+main div .grid-img, main div .grid-img-small{
     width: 100%;
     height: 100%;
 }
 
-main div[id="grid"] .grid-img:hover, main div[id="grid"] .grid-img-small:hover{
+main div .grid-img:hover, main div .grid-img-small:hover{
     border: 1px solid black;
 }
 
-main > div div.topo div.carousel div.carousel-inner > .carousel-component{
-    width: 100%;
-    height: 100%;
+main > div div.topo div.carousel div.carousel-inner img.carousel-component{
+    height: 20em;
 }
 
 @media screen and (max-width: 768px){

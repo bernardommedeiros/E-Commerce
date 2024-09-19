@@ -78,13 +78,13 @@ body > nav{
     padding: .5em;
 }
 
-body > nav > div[class="dropdown"]{
+body > nav > div{
     text-decoration: none;
     color: white;
 }
 
 /* Underline effect */
-body > nav > div[class="dropdown"]::after{
+body > nav > div::after{
     content: '';
     position: absolute;
     height: 2px;
@@ -95,7 +95,7 @@ body > nav > div[class="dropdown"]::after{
     transition: all .2s;
 }
 
-body > nav > div[class="dropdown"]:hover::after{
+body > nav > div:hover::after{
     width: 100%;
     left: 0;
 }
