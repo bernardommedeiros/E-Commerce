@@ -5,3 +5,10 @@ main {
     margin: 1em;
     gap: 2em;
 }
+
+main div{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border: 1px solid gray;
+}
