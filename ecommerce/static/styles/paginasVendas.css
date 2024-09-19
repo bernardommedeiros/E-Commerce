@@ -4,11 +4,6 @@ body > div{
     gap: 1em;
 }
 
-body div main{
-    width: 80vw;
-    padding: 1em;
-}
-
 body div > div#leftpart{
     display: flex;
     flex-direction: column;
@@ -30,10 +25,24 @@ body div main > div{
     gap: 2em;
 }
 
-.card{text-align: center;}
+body > div main > div.card{text-align: center; width: 28em;}
 
 body div main{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 2em;
+    width: 80vw;
+    padding: 1em;
+}
+
+@media screen and (max-width: 768px){
+    body div main{
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 1em 0;
+    }
+
+    body div > div#leftpart{
+        display: none;
+    }
 }
