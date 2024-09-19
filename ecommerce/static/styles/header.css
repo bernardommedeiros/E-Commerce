@@ -34,6 +34,33 @@ header nav > ol > li#logomarca a.name{
     text-decoration: none;
 }
 
+header > nav div button.dropdown-toggle{
+    background-color: transparent;
+    border: none;
+}
+
+header > nav div button.dropdown-toggle:hover{
+    background-color: transparent;
+}
+
+header > nav div button.dropdown-toggle:after{
+    content: none;
+}
+
+
+header > nav ol li div.carrinho{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+header > nav ol div div.login form div.recuperarConta{
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    margin-top: .5em;
+}
+
 header nav > ol > li > a > img{
     width: 10em;
     height: 10em;
@@ -98,33 +125,6 @@ body > nav > div::after{
 body > nav > div:hover::after{
     width: 100%;
     left: 0;
-}
-
-body > nav div button.dropdown-toggle{
-    background-color: transparent;
-    border: none;
-}
-
-body > nav div button.dropdown-toggle:hover{
-    background-color: transparent;
-}
-
-body > nav div button.dropdown-toggle:after{
-    content: none;
-}
-
-
-body > nav ol li div.carrinho{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-body > nav ol div div.login form div.recuperarConta{
-    display: flex;
-    flex-direction: column;
-    gap: .5em;
-    margin-top: .5em;
 }
 
 @media screen and (max-width: 768px){
