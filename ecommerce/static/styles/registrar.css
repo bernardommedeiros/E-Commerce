@@ -108,3 +108,16 @@ main > form > div.termos{
 
 main > form > div label {font-size: 15px;}
 
+@media screen and (max-width: 768px){
+    header a.name{
+        color: black;
+        font-size: 30px;
+        font-family: "Abril Fatface", serif;
+        text-decoration: none;
+    }
+
+    header a img{
+        width: 7em;
+        height: 7em;
+    }
+}
