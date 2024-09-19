@@ -4,5 +4,24 @@
 <link rel="stylesheet" href="../static/styles/gerenciadorUsuarios.css">
 {% endblock %}
 {% block content %}
-{% for data in datas %}
+<main>
+    {% for user in users %}
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">{{ user[1]}}</h5>
+            </div>
+            <div class="modal-body">
+              <p>Email: {{ user[2] }}</p>
+              <p>Senha: {{ user[3] }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger">Excluir Usuário</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+</main>
 {% endblock %}

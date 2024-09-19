@@ -139,9 +139,14 @@ def masculino_acessorios():
             flash("Usuário ou senha inválido(s)")
     return render_template('acessoriosMasculino.html', login_form=loginform, usuario=usuarioOBJ)
 
+@app.route("/logout")
+def logout():
+    logout_user()
+    return redirect(url_for("index"))
+
 @app.route("/registrar", methods=["GET", "POST"])
 def registrar():
-    registerForm =RegisterForm()
+    registerForm = RegisterForm()
     if(registerForm.validate_on_submit()):
         cursor = db.cursor()
         existeNoDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and email=%s", (registerForm.usuario.data, registerForm.email.data))
@@ -153,7 +158,9 @@ def registrar():
             flash(f"O usuário {registerForm.usuario.data} ou o email {registerForm.email.data} já existem no nosso banco de dados")
     return render_template('registrar.html', register_form=registerForm)
 
-@app.route("/logout")
-def logout():
-    logout_user()
-    return redirect(url_for("index"))
+@app.route("/gerenciador_usuarios", methods=["GET", "POST"])
+def gerenciador_usuarios():
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM users WHERE id > 3")
+    users = cursor.fetchall()
+    return render_template('gerenciadorUsuarios.html', users = users)
