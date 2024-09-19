@@ -141,17 +141,17 @@ def masculino_acessorios():
 
 @app.route("/registrar", methods=["GET", "POST"])
 def registrar():
-    registerform = RegisterForm()
-    if(registerform.validate_on_submit()):
+    registerForm =RegisterForm()
+    if(registerForm.validate_on_submit()):
         cursor = db.cursor()
-        existeNoDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and email=%s", (registerform.usuario.data, registerform.email.data))
+        existeNoDB = cursor.execute("SELECT * FROM users WHERE usuario =%s and email=%s", (registerForm.usuario.data, registerForm.email.data))
         if(existeNoDB == 0):
-            cursor.execute("INSERT INTO users (usuario, email, senha) values (%s, %s, %s)", (registerform.usuario.data, registerform.email.data, registerform.senha.data))
+            cursor.execute("INSERT INTO users (usuario, email, senha) values (%s, %s, %s)", (registerForm.usuario.data, registerForm.email.data, registerForm.senha.data))
             cursor.connection.commit()
             flash(f"Conta criada com sucesso!")
         else:
-            flash(f"O usuário {registerform.usuario.data} ou o email {registerform.email.data} já existem no nosso banco de dados")
-    return render_template('registrar.html', register_form=RegisterForm)
+            flash(f"O usuário {registerForm.usuario.data} ou o email {registerForm.email.data} já existem no nosso banco de dados")
+    return render_template('registrar.html', register_form=registerForm)
 
 @app.route("/logout")
 def logout():

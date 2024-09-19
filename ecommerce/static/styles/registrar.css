@@ -5,6 +5,12 @@ header{
     align-items: center;
     gap: .5em;
     background-color: var(--headerColor);
+    text-decoration: none;
+}
+
+header > a img{
+    width: 10em;
+    height: 10em;
 }
 
 main{
