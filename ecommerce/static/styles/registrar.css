@@ -3,8 +3,12 @@ header{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 1em;
     gap: .5em;
     background-color: var(--headerColor);
+}
+
+header > a{
     text-decoration: none;
 }
 
@@ -20,10 +24,10 @@ main{
     justify-content: center;
     width: 400px;
     height: 620px;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 5em auto;
     background-color:  #0D405A;
     border-radius: 40px;
+    box-shadow: 2px 1px 3px black;
     color: white;
 }
 
@@ -51,7 +55,29 @@ main > form label{
     align-items: center;
 }
 
-main > form input{
+main > form input[type="text"]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border: 2px solid gray;
+}
+
+main > form input[type="email"]{
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border: 2px solid gray;
+}
+
+main > form input[type="password"]{
     width: 100%;
     padding: 10px;
     border-radius: 6px;
@@ -65,6 +91,7 @@ main > form input{
 main > form > div{
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 main > form > div label {font-size: 15px;}
