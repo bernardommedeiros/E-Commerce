@@ -20,20 +20,22 @@
         <p>crie sua conta</p>
         <form action="#" method="POST">
             {{ register_form.csrf_token }}
-            <label for="">Nome Completo</label>
-            {{ register_form.usuario }}
-
-            <label for="">Email</label>
-            {{ register_form.email }}
-
-            <label for="">Senha</label>
-            {{ register_form.senha }}
-
+            <div>
+                <label for="">Nome Completo</label>
+                {{ register_form.usuario }}
+            </div>
+            <div>
+                <label for="">Email</label>
+                {{ register_form.email }}
+            </div>
+            <div>
+                <label for="">Senha</label>
+                {{ register_form.senha }}
+            </div>
             <div>
                 {{ register_form.termo }}
                 <label>Li, e aceito os <a href="#">Termos de Uso</a> e <a href="#">Políticas de privacidade</a></label>
             </div>
-
             <input type="submit" value="Confirmar">
         </form>
         {% with messages = get_flashed_messages() %}
