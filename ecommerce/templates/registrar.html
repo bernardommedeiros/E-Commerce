@@ -12,27 +12,28 @@
 </head>
 <body>
     <header>
+        <a href="index" class="name">NEW</a>
         <a href="index"><img src="../static/imgs/logo/logo.png" alt="caixa de entrada"></a>
-        <a href="index" class="name">NEW HYPE</a>
+        <a href="index" class="name">HYPE</a>
     </header>
     <main>
         <h1>Cadastre-se</h1>
         <p>crie sua conta</p>
         <form action="#" method="POST">
             {{ register_form.csrf_token }}
-            <div>
+            <div class="inputBox">
                 <label for="">Nome Completo</label>
                 {{ register_form.usuario }}
             </div>
-            <div>
+            <div class="inputBox">
                 <label for="">Email</label>
                 {{ register_form.email }}
             </div>
-            <div>
+            <div class="inputBox">
                 <label for="">Senha</label>
                 {{ register_form.senha }}
             </div>
-            <div>
+            <div class="termos">
                 {{ register_form.termo }}
                 <label>Li, e aceito os <a href="#">Termos de Uso</a> e <a href="#">Políticas de privacidade</a></label>
             </div>
