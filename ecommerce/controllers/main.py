@@ -151,7 +151,7 @@ def registrar():
             flash(f"Conta criada com sucesso!")
         else:
             flash(f"O usuário {registerform.usuario.data} ou o email {registerform.email.data} já existem no nosso banco de dados")
-    return render_template('registrar.html', logout_form=RegisterForm)
+    return render_template('registrar.html', register_form=RegisterForm)
 
 @app.route("/logout")
 def logout():
