@@ -10,13 +10,7 @@ usuarioOBJ = Usuario()
 
 @lm.user_loader
 def load_user(id):
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM users WHERE id = %s", (id))
-    usuarioDB = cursor.fetchall()
-    user = Usuario()
-    if(len(usuarioDB) > 0):
-        user.instanciar(usuarioDB[0], usuarioDB[1], usuarioDB[2], usuarioDB[3])
-    return user
+    return usuarioOBJ
 
 @app.route("/home", methods=["GET", "POST"])
 @app.route("/index", methods=["GET", "POST"])
