@@ -155,7 +155,7 @@ def registrar():
             cursor.connection.commit()
             flash(f"Conta criada com sucesso!")
         else:
-            flash(f"O usuário {registerForm.usuario.data} ou o email {registerForm.email.data} já existem no nosso banco de dados")
+            flash(f"O usuário '{registerForm.usuario.data}' ou o email '{registerForm.email.data}' já existem no nosso banco de dados")
     return render_template('registrar.html', register_form=registerForm)
 
 @app.route("/gerenciador_usuarios", methods=["GET", "POST"])
@@ -169,7 +169,7 @@ def gerenciador_usuarios():
             cursorCriarUsuario.connection.commit()
             flash(f"Conta criada com sucesso!")
         else:
-            flash(f"O usuário {criarUsuarioAdm.usuario.data} ou o email {criarUsuarioAdm.email.data} já existem no nosso banco de dados")
+            flash(f"O usuário '{criarUsuarioAdm.usuario.data}' ou o email '{criarUsuarioAdm.email.data}' já existem no nosso banco de dados")
     cursor = db.cursor()
     cursor.execute("SELECT * FROM users WHERE id > 3")
     users = cursor.fetchall()

@@ -18,6 +18,7 @@
         <a href="index" class="name">HYPE</a>
     </header>
     <div>
+      <h2>Registrar Usuário</h2>
       <form action="" method="POST">
         {{ adm_form.csrf_token }}
         <div class="inputBox">
@@ -32,7 +33,7 @@
           <label for="">Senha</label>
           {{ adm_form.senha }}
       </div>
-      <input type="submit" value="Confirmar">
+      <input type="submit" value="Registrar">
       </form>
       {% with messages = get_flashed_messages() %}
       {% if messages %}

@@ -1,4 +1,5 @@
 main {
+    max-width: 100vw;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -17,9 +18,14 @@ main div{
     border: 1px solid gray;
     background-color: aliceblue;
     border-radius: 10px;
+    color: black;
 }
 
 body > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5em;
     background-color: var(--Color02);
     border: 1px solid gray;
 }
