@@ -31,9 +31,9 @@ def index():
             cursorId.execute("SELECT id FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
             cursorEmail = db.cursor()
             cursorEmail.execute("SELECT email FROM users WHERE usuario=%s and senha=%s", (loginform.usuario.data, loginform.senha.data))
-            usuarioOBJ.instanciar(cursorId.fetchone(), loginform.usuario.data, cursorEmail.fetchone(), loginform.senha.data)
+            usuarioOBJ.instanciar(cursorId.fetchone()[0], loginform.usuario.data, cursorEmail.fetchone()[0], loginform.senha.data)
             login_user(usuarioOBJ)
-            flash(f"Logado com sucesso!, {usuarioOBJ.id}")
+            flash(f"Logado com sucesso!")
         else:
             flash("Usuário ou senha inválido(s)")
     return render_template('index.html', login_form=loginform, usuario=usuarioOBJ)
