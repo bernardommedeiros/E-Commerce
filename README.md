@@ -10,7 +10,8 @@ Projeto final da matéria de WebDesign no curso de Análise e Desenvolvimento de
 <br>
 
 ## Pré requisitos
-- [Python3](https://dev.mysql.com/downloads/mysql/)
+- [Python 3](https://www.python.org/downloads/)
+- [MySql](https://dev.mysql.com/downloads/mysql/)
 
 <br>
 
@@ -18,6 +19,25 @@ Projeto final da matéria de WebDesign no curso de Análise e Desenvolvimento de
 - Na pasta do projeto utilize o seguinte comando:
 ```
 pip install flask
+```
+### Criação do banco de dados:
+- Login no MySql:
+```
+mysql -u root -p
+```
+- Criação do banco de dados:
+```
+CREATE DATABASE ecommerce;
+```
+- Criação da tabela:
+```
+CREATE TABLE users(
+    id integer not null auto_increment,
+    usuario VARCHAR(100) not null,
+    email VARCHAR(150) not null,
+    senha VARCHAR(50) not null,
+    PRIMARY KEY(id)
+);
 ```
 
 <br>
