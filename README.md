@@ -18,7 +18,8 @@ Projeto final da matéria de WebDesign no curso de Análise e Desenvolvimento de
 ## Configurações necessárias
 - Na pasta do projeto utilize o seguinte comando:
 ```
-pip install flask
+pip install flask; pip install flask_wtf; pip install pymysql; pip install flask_login
+
 ```
 ### Criação do banco de dados:
 - Login no MySql:
