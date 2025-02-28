@@ -21,6 +21,7 @@ Projeto final da matéria de WebDesign no curso de Análise e Desenvolvimento de
 python -m venv ./venv
 ```
 - Entre no ambiente virtual:
+
 Linux:
 - bash/zsh
 ```
@@ -48,7 +49,8 @@ venv\Scripts\activate.bat
 venv\Scripts\Activate.ps1
 ```
 
-- Na pasta do projeto utilize o seguinte comando:
+
+- Instalar as dependências:
 ```
 pip install flask; pip install flask_wtf; pip install pymysql; pip install flask_login
 
