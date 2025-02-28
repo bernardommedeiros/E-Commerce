@@ -16,6 +16,38 @@ Projeto final da matéria de WebDesign no curso de Análise e Desenvolvimento de
 <br>
 
 ## Configurações necessárias
+- Crie o ambiente virtual:
+```
+python -m venv ./venv
+```
+- Entre no ambiente virtual:
+Linux:
+- bash/zsh
+```
+source venv/bin/activate
+```
+- fish
+```
+source venv/bin/activate.fish
+```
+- csh/tcsh
+```
+source venv/bin/activate.csh
+```
+- pwsh
+```
+venv/bin/Activate.ps1
+```
+Windows:
+- cmd
+```
+venv\Scripts\activate.bat
+```
+- PowerShell
+```
+venv\Scripts\Activate.ps1
+```
+
 - Na pasta do projeto utilize o seguinte comando:
 ```
 pip install flask; pip install flask_wtf; pip install pymysql; pip install flask_login
